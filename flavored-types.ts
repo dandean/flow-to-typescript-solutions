@@ -1,3 +1,8 @@
+/**
+ * Challenge: "distinguishing between types of IDs. All IDs are strings under
+ * the hood but we don’t want to allow for example using a Component ID where a
+ * Variable ID is expected."
+ */
 
 /**
  * Flavoring interface lets us make a specific version of a literal type.

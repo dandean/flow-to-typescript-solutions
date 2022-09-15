@@ -1,4 +1,15 @@
 /**
+ * Challenge: WFDL Expressions and Types. Because they are opaque (they can only
+ * be created by calling the constructor functions exposed by WFDL) this enables
+ * us to chage the underlying representation to something 50% more compact
+ * without changing anything but these constructor functions.
+ * 
+ * Without opaque types WFDL consumers would be able to create Expressions and
+ * Types with literal objects which would hinder this and would expose
+ * implementation details that should not be exposed.
+ */
+
+/**
  * A unique internal symbol we can use to name our tag field
  */
 declare const WFDLOpaqueTypeTag: unique symbol;
