@@ -1,6 +1,6 @@
 // Inside the store file, we define store structure, with full knowledge of the
 // state shape. This is not exported.
-type InternalStateShape = {
+interface InternalStateShape {
   some: {
     arbitrarily: {
       nested: {
