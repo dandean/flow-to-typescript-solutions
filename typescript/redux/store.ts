@@ -2,15 +2,15 @@
 // state shape. This is not exported.
 type InternalStateShape = {
   some: {
-      arbitrarily: {
-          nested: {
-              data: {
-                  structure: {
-                      exists: boolean,
-                  },
-              },
+    arbitrarily: {
+      nested: {
+        data: {
+          structure: {
+            exists: boolean,
           },
+        },
       },
+    },
   },
 };
 
@@ -25,24 +25,24 @@ export const unwrap = (state: ExternalStateShape) => <InternalStateShape>state
 
 export const initialState: InternalStateShape = {
   some: {
-      arbitrarily: {
-          nested: {
-              data: {
-                  structure: {
-                      exists: true,
-                  }
-              }
+    arbitrarily: {
+      nested: {
+        data: {
+          structure: {
+            exists: true,
           }
+        }
       }
+    }
   }
 }
 
 // typical reducer with cases for different actions
 export const exampleReducer = (state: ExternalStateShape = initialState, action: any): ExternalStateShape => {
   switch (action.type) {
-      default: {
-          return state
-      }
+    default: {
+      return state
+    }
   }
 }
 

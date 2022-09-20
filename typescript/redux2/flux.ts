@@ -7,7 +7,7 @@ type GlobalState = { ExampleStore: ExternalStateShape };
 const initialGlobalState = { ExampleStore: initialState };
 
 const combinedReducer = (state: GlobalState = initialGlobalState, action: any): GlobalState => ({
-    ExampleStore: exampleReducer(state.ExampleStore, action)
+  ExampleStore: exampleReducer(state.ExampleStore, action)
 })
 
 // to make flow pass we'll also create a greatly simplified useSelector
