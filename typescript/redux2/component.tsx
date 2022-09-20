@@ -13,8 +13,6 @@ const ExampleComponent = () => {
     // works as expected:
     const works = useSelector(state => exampleSelector(state.ExampleStore))
 
-    // Unfortunately, because ExternalStateShape is just {}, empty objects can
-    // be passed in:
     const worksButProbablyNotWhatWeWant = useSelector(state => exampleSelector({}))
 
     return (<p>{works ? 'yay' : 'nae'}</p>)
