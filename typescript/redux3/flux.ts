@@ -1,9 +1,11 @@
-import { exampleReducer, initialState, StateShape } from "./store/store";
+import { exampleReducer, initialState, StateShape } from "./store";
 
 // outside the store file, we would add the reducer to the store;
 // this is a highly simplified example to make it a little more
 // similar to our use case:
-type GlobalState = { ExampleStore: StateShape };
+interface GlobalState {
+  ExampleStore: StateShape;
+}
 const initialGlobalState = { ExampleStore: initialState };
 
 const combinedReducer = (

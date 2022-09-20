@@ -1,5 +1,9 @@
-// Inside the store file, we define store structure, with full knowledge of the
-// state shape. This is not exported.
+// -----------------------------------------------------------------------------
+// The internal API for this store.
+// Anything exported by this file will be wrapped by various opaque factory
+// functions before being exported to the public API.
+// -----------------------------------------------------------------------------
+
 export interface StateShape {
   some: {
     arbitrarily: {

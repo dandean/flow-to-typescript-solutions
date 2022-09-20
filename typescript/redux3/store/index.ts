@@ -1,24 +1,29 @@
-// type NormalReducer = (state: any, action: any) => any
-// type OpaqueReducer<reducer> = (state: {}, action: any) => ReturnType<typeof reducer>
+import {
+  createOpaqueReducer,
+  createOpaqueSelector,
+  createOpaqueState,
+} from "../lib/opaque-factories";
+import * as internals from "./internals";
 
-// export const makeReducerOpaque = (reducer: NormalReducer) => <OpaqueReducer<reducer>> reducer
+// -----------------------------------------------------------------------------
+// The Public API for this Store
+// Anything which exposes internal library state structure is processed through
+// factory functions to make them "opaque" and safe to use elsewhere.
+// -----------------------------------------------------------------------------
 
-// type NormalSelector = (state: any) => any
-// type OpaqueSelector<selector> = ({}) => Returntype<typeof selector>
+// Create an opaque version of the State object so we can reuse it's opaque
+// type across all other call sites.
+export const initialState = createOpaqueState(internals.initialState);
 
-// export const makeSelectorOpaque = (selector: NormalSelector) => <OpaqueSelector<selector>> selector
+// Export opaque state shape for configuration within flux
+export type StateShape = typeof initialState;
 
-import * as internals from "./store";
+export const exampleReducer = createOpaqueReducer(
+  internals.exampleReducer,
+  initialState
+);
 
-const makeReducerOpaque = <T extends (...args: any) => any>(reducer: T) => {
-  const OPAQUE: unique symbol = Symbol();
-  type OpaqueShape = { readonly [OPAQUE]: "🫥" };
-  type Opaque<T> = OpaqueShape; // Note how provided type T is discarded
-
-  return reducer as (
-    state: Opaque<Parameters<T>[0]>,
-    actions: Parameters<T>[1]
-  ) => Opaque<ReturnType<T>>;
-};
-
-export const exampleReducer = makeReducerOpaque(internals.exampleReducer);
+export const exampleSelector = createOpaqueSelector(
+  internals.exampleSelector,
+  initialState
+);
