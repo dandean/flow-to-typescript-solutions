@@ -17,6 +17,12 @@ An ID value is often just a `string` literal. We want to be able to differentiat
 different kinds of ID types so that one ID type cannot be assigned to another
 ID type.
 
+### Formatted String Value Types
+
+Examples of this are Email, URL, and GUID. We want to be able to ensure that a
+string value conforms to specific formatting constraints in order to be
+considered valid.
+
 ### Opaque Structure Encapsulation
 
 Our Redux stores are built upon state tree objects. We want the ability to make

@@ -11,7 +11,7 @@
  */
 export const createOpaqueState = <T>(state: T) => {
   const OPAQUE: unique symbol = Symbol();
-  return state as { readonly [OPAQUE]: "🫥" };
+  return state as { readonly [OPAQUE]: true };
 };
 
 /**

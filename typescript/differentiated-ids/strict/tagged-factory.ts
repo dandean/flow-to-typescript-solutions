@@ -28,6 +28,9 @@ function assertIsComponentId(value: string): asserts value is ComponentId {
   // Here we could even have some logic to verify the string format...
 }
 
+/**
+ * Creates a tagged string value of type `ComponentId`
+ */
 export const createComponentId = (value: string): ComponentId => {
   assertIsComponentId(value);
   return value;
@@ -37,6 +40,9 @@ function assertIsVariableId(value: string): asserts value is VariableId {
   // Here we could even have some logic to verify the string format...
 }
 
+/**
+ * Creates a tagged string value of type `Variable`
+ */
 export const createVariableId = (value: string): VariableId => {
   assertIsVariableId(value);
   return value;
