@@ -28,3 +28,9 @@ considered valid.
 Our Redux stores are built upon state tree objects. We want the ability to make
 that state tree shape opaque to consumers, requiring them to use provided state
 selectors rather than drilling into the state tree itself via reducers.
+
+## Reading
+
+- [Implementing an opaque type in typescript](https://evertpot.com/opaque-ts-types/)
+- [Functional Typescript: Opaque Types](https://denistakeda.github.io/articles/004_typescript_opaque.html)
+- [beraliv: Opaque Types](https://blog.beraliv.dev/2021-05-07-opaque-type-in-typescript)

@@ -7,7 +7,7 @@
  * - Variables of a different tagged type cannot be assigned.
  *
  * Use Case:
- * This is useful when we want to ensure string ID's confirm to a specific format
+ * This is useful when we want to ensure string ID's conform to a specific format
  * and when we want to ensure ID types cannot be accidentally mis-assigned. For
  * instance, when we have Component and we want to ensure only a ComponentID can
  * be assigned to it, and not a VariableID.
